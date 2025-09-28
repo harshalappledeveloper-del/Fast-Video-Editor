@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video and Audio Merger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Video and Audio Merger</h1>
+        <p>Upload your videos and an audio file to combine them.</p>
+
+        <form id="upload-form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="videos">1. Select Video Files (in order):</label>
+                <input type="file" id="videos" name="videos" accept="video/*" multiple required>
+            </div>
+            <div class="form-group">
+                <label for="audio">2. Select Audio File:</label>
+                <input type="file" id="audio" name="audio" accept="audio/*" required>
+            </div>
+            <button type="submit">Combine Videos and Audio</button>
+        </form>
+
+        <div id="status"></div>
+        <div id="result"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
